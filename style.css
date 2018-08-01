@@ -7,7 +7,7 @@ body{
 }
 
 html{
-	font-size: 18px;
+	font-size: 17px;
 }
 
 body{
@@ -23,8 +23,8 @@ img{
 .page{
 	margin: 55px 0 25px 0;
 	position: absolute;
-	width: 70%;
-	left: 15%;
+	width: 72%;
+	left: 14%;
 	min-height: 100%;
 	border-radius: 3px;
 	overflow: hidden;
@@ -82,7 +82,7 @@ section.no-padding{
 	align-items: center;
 
 	height: 100%;
-    padding: 30px;
+    padding: 25px;
 
 }
 
