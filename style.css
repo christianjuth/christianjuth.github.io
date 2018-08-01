@@ -14,6 +14,7 @@ body{
 	background-color: #a4a7a9;
 	background-image: url("texture.png");
 	font-family: 'Gudea', sans-serif;
+	padding-top: 40px;
 }
 
 img{
@@ -21,15 +22,25 @@ img{
 }
 
 .page{
-	margin: 55px 0 25px 0;
+	margin-bottom: 25px;
 	position: absolute;
 	width: 72%;
 	left: 14%;
 	min-height: 100%;
 	border-radius: 3px;
-	overflow: hidden;
+}
 
-	box-shadow: 0 15px 24px rgba(0, 0, 0, 0.22), 0 19px 76px rgba(0, 0, 0, 0.3);
+/* page drop shadow */
+.page:after{
+	content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    box-shadow: 0 15px 24px rgba(0, 0, 0, 0.22), 0 19px 76px rgba(0, 0, 0, 0.3);
+    opacity: 0;
+    z-index: -1;
 }
 
 .gradient{
@@ -47,26 +58,40 @@ img{
 
 .dark,
 .dark *,
+.dark *:hover,
 .gradient,
-.gradient *{
+.gradient *,
+.gradient *:hover{
 	color: #fff;
 }
 
 section{
-	padding: 60px 80px;
+	padding: 80px;
 	min-height: 200px;
 	background-color: #fff;
+}
+
+section:first-child{
+	border-top-left-radius: 3px;
+	border-top-right-radius: 3px;
+	overflow: hidden;
+}
+
+section:last-child{
+	border-bottom-left-radius: 3px;
+	border-bottom-right-radius: 3px;
+	overflow: hidden;
 }
 
 section.no-padding{
 	padding: 0;
 }
 
-.row{
+.row.no-padding{
 	margin: 0;
 }
 
-.row > div{
+.row.no-padding > div{
 	padding: 0;
 }
 
@@ -82,7 +107,7 @@ section.no-padding{
 	align-items: center;
 
 	height: 100%;
-    padding: 25px;
+    padding: 10px;
 
 }
 
@@ -92,7 +117,7 @@ ul {
 	margin: 0;
 }
 
-li{
+ul.extra-space li{
 	margin-bottom: 7px;
 }
 
@@ -102,25 +127,100 @@ mark{
 	z-index: 1;
 }
 
-mark:before{
+hr{
+    margin: 0 0 10px 0;
+    border-top: 1px solid #eee;
+}
+
+mark:before,
+mark:after{
 	content: "";
     width: 100%;
     height: 50%;
     position: absolute;
-    top: 50%;
+    top: 45%;
     left: 0;
     height: 34%;
     background-color: #dc3d24;
-    transform: rotate(-0.75deg);
     z-index: -1;
+    opacity: 0.9;
+}
 
-    opacity: 0;
+a, a:hover{
+	color: #212529;
+}
+
+p,
+li{
+	font-family: 'Source Sans Pro', sans-serif;
+	font-size: 1.1rem;
+    line-height: 1.6rem;
+}
+
+h5{
+	margin-bottom: 5px;
+}
+
+.expierence-card{
+	border-top: 1px solid #eee;
+    padding: 10px 0;
+}
+
+
+
+
+
+
+mark:before{
+	opacity: 0;
 	animation-name: bounceIn;
-	animation-duration: 200ms;
+	animation-delay: 350ms;
+	animation-duration: 300ms;
+	animation-fill-mode: forwards;
+}
+mark:hover:before{
+	visibility: hidden;
+}
+mark:after{
+	visibility: hidden;
+	transform: rotate(-0.40deg);
+}
+mark:hover:after{
+	visibility: visible;
+}
+
+
+
+
+.page,
+section:not(:first-child){
+	margin-top: 80px;
+	animation-name: riseUp;
+	animation-duration: 500ms;
+	animation-delay: 100ms;
 	animation-timing-function: linear;
 	animation-fill-mode: forwards;
 }
 
+
+
+.page:after{
+	animation-name: dropShadow;
+	animation-duration: 500ms;
+	animation-delay: 500ms;
+	animation-fill-mode: forwards;
+}
+
+
+/* Animations! */
+@keyframes dropShadow{
+  0%{
+    opacity: 0;
+  }
+  100%{
+    opacity: 1;
+  }
+}
 
 @keyframes bounceIn{
   0%{
@@ -128,8 +228,23 @@ mark:before{
     transform: scale(0.4) translate3d(0,0,0);
   }
   100%{
-    opacity: 1;
-    transform: scale(1) translate3d(0,0,0);
+    opacity: 0.9;
+    transform: scale(1) translate3d(0,0,0) rotate(-0.75deg);
+  }
+}
+
+@keyframes riseUp{
+  0%{
+  	margin-top: 80px;
+  }
+  25%{
+  	margin-top: 40px;
+  }
+  50%{
+  	margin-top: 20px;
+  }
+  100%{
+  	margin-top: 0;
   }
 }
 
