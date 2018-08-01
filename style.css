@@ -1,0 +1,135 @@
+html,
+body{
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+}
+
+html{
+	font-size: 18px;
+}
+
+body{
+	background-color: #a4a7a9;
+	background-image: url("texture.png");
+	font-family: 'Gudea', sans-serif;
+}
+
+img{
+	background-color: #000;
+}
+
+.page{
+	margin: 55px 0 25px 0;
+	position: absolute;
+	width: 70%;
+	left: 15%;
+	min-height: 100%;
+	border-radius: 3px;
+	overflow: hidden;
+
+	box-shadow: 0 15px 24px rgba(0, 0, 0, 0.22), 0 19px 76px rgba(0, 0, 0, 0.3);
+}
+
+.gradient{
+	/* fallback for old browsers */
+	background: #000000;
+	/* Chrome 10-25, Safari 5.1-6 */
+  	background: -webkit-linear-gradient(to top right, #000000 45%, #484848); 
+  	/* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  	background: linear-gradient(to top right, #000000 45%, #484848);
+}
+
+.dark{
+	background: #000000;
+}
+
+.dark,
+.dark *,
+.gradient,
+.gradient *{
+	color: #fff;
+}
+
+section{
+	padding: 60px 80px;
+	min-height: 200px;
+	background-color: #fff;
+}
+
+section.no-padding{
+	padding: 0;
+}
+
+.row{
+	margin: 0;
+}
+
+.row > div{
+	padding: 0;
+}
+
+.header-text {
+	display: -ms-flexbox;
+	display: -webkit-flex;
+	display: flex;
+
+	-ms-flex-align: center;
+	-webkit-align-items: center;
+	-webkit-box-align: center;
+
+	align-items: center;
+
+	height: 100%;
+    padding: 30px;
+
+}
+
+ul {
+	list-style-type: none;
+	padding: 0;
+	margin: 0;
+}
+
+li{
+	margin-bottom: 7px;
+}
+
+mark{
+	background: transparent;
+	position: relative;
+	z-index: 1;
+}
+
+mark:before{
+	content: "";
+    width: 100%;
+    height: 50%;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    height: 34%;
+    background-color: #dc3d24;
+    transform: rotate(-0.75deg);
+    z-index: -1;
+
+    opacity: 0;
+	animation-name: bounceIn;
+	animation-duration: 200ms;
+	animation-timing-function: linear;
+	animation-fill-mode: forwards;
+}
+
+
+@keyframes bounceIn{
+  0%{
+    opacity: 0;
+    transform: scale(0.4) translate3d(0,0,0);
+  }
+  100%{
+    opacity: 1;
+    transform: scale(1) translate3d(0,0,0);
+  }
+}
+
