@@ -225,7 +225,7 @@ h5{
 
 	.header-text-wrap{
 		position: absolute;
-		bottom: 50px;
+		bottom: 0;
 	}
 
 	.header-text h1{
@@ -233,6 +233,7 @@ h5{
 		bottom: 0;
         font-size: 9vw;
         padding: 0;
+        margin-bottom: 13vh;
     }
     
     h1{
