@@ -218,6 +218,10 @@ h5{
 }
 
 @media (max-width: 576px) {
+	.page{
+		border-radius: 0;
+	}
+
 	.header{
 		height: 100vh;
 		position: relative;
@@ -233,7 +237,7 @@ h5{
 		bottom: 0;
         font-size: 9vw;
         padding: 0;
-        margin-bottom: 13vh;
+        margin-bottom: calc(40px + 10vh);
     }
     
     h1{
