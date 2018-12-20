@@ -14,6 +14,8 @@ body{
 	background-color: #a4a7a9;
 	background-image: url("texture.png");
 	font-family: 'Gudea', sans-serif;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
 }
 
 img{
@@ -27,7 +29,7 @@ img{
 	width: 72%;
 	left: 14%;
 	min-height: 100%;
-	border-radius: 3px;
+	border-radius: 4px;
 	overflow: hidden;
 }
 
@@ -72,6 +74,14 @@ section.no-padding{
 	padding: 0;
 }
 
+.row.no-padding-right{
+	margin-right: -1px;
+}
+
+.row.no-padding-right > div{
+	padding-right: 0;
+}
+
 .header-text {
 	display: -ms-flexbox;
 	display: -webkit-flex;
@@ -85,7 +95,6 @@ section.no-padding{
 
 	height: 100%;
     padding: 10px;
-
 }
 
 ul {
@@ -98,30 +107,9 @@ ul.extra-space li{
 	margin-bottom: 7px;
 }
 
-mark{
-	padding: 0;
-	background: transparent;
-	position: relative;
-	z-index: 1;
-}
-
 hr{
     margin: 0 0 10px 0;
     border-top: 1px solid #eee;
-}
-
-mark:before,
-mark:after{
-	content: "";
-    width: 100%;
-    height: 50%;
-    position: absolute;
-    top: 45%;
-    left: 0;
-    height: 34%;
-    background-color: #dc3d24;
-    z-index: -1;
-    opacity: 0.9;
 }
 
 a, a:hover{
@@ -160,6 +148,14 @@ h5{
 
 
 @media (max-width: 992px) {
+	.row.no-xs-padding{
+		margin: -1px;
+	}
+
+	.row.no-xs-padding > div{
+		padding: 0;
+	}
+
     .page{
         margin: 20px;
         left: 0;
@@ -171,6 +167,7 @@ h5{
 
 
 @media (max-width: 767px) {
+
     section{
         padding: 50px 25px 60px;
     }
@@ -195,7 +192,10 @@ h5{
     }
 }
 
+
+
 @media (max-width: 576px) {
+
 	.page{
 		border-radius: 0px;
 	}
@@ -222,8 +222,99 @@ h5{
         font-size: 8vw;
     }
 
+    p{
+    	font-size: 1.3rem;
+    	font-weight: 200;
+    }
+
 	.expierence-card{
     	border: none;
     	padding: 0;
+    }
+}
+
+.album{
+	position: relative;
+}
+
+.album .controls{
+	background-color: rgba(134, 134, 134, 0.75);
+	position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    opacity: 0;
+}
+
+.album .controls:hover{
+	opacity: 1;
+}
+
+.album .controls:before{
+	content: " ";
+    display: block;
+	height: 80px;
+    width: 80px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 100%;
+    border: 2px solid #FFF;
+}
+
+.album .controls:after{
+	content: " ";
+    display: block;
+    border-style: solid;
+    box-sizing: border-box;
+    width: 28px;
+    height: 30px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    border-width: 17px 0px 17px 28px;
+    border-color: transparent transparent transparent #ffffff;
+    transform: translate(-50%, -50%);
+    margin-left: 4px;
+    cursor: pointer;
+}
+
+
+
+
+
+/* --- Christmas Mode --- */
+body.winter-mode{
+	background-image: url('http://i.imgur.com/BiSmXaq.png'), url('http://i.imgur.com/XHuy0NJ.png'), url('http://i.imgur.com/okpRxJU.png');
+	-webkit-animation: snow 20s linear infinite;
+    -moz-animation: snow 20s linear infinite;
+    -ms-animation: snow 20s linear infinite;
+    animation: snow 20s linear infinite;
+}
+
+@-webkit-keyframes snow {
+    0% { background-position: 0px 0px, 0px 0px, 0px 0px }
+    100% {
+        background-position: 500px 1000px, 400px 400px, 300px 300px;
+    }
+}
+@-moz-keyframes snow {
+    0% { background-position: 0px 0px, 0px 0px, 0px 0px }
+    100% {
+        background-position: 500px 1000px, 400px 400px, 300px 300px;
+    }
+}
+@-ms-keyframes snow {
+    0% { background-position: 0px 0px, 0px 0px, 0px 0px }
+    100% {
+        background-position: 500px 1000px, 400px 400px, 300px 300px;
+    }
+}
+@keyframes snow {
+    0% { background-position: 0px 0px, 0px 0px, 0px 0px }
+    100% {
+        background-position: 500px 1000px, 400px 400px, 300px 300px;
     }
 }
